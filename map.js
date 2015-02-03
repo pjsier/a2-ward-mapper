@@ -31,10 +31,6 @@ map.setMaxBounds(geo_bounds);
 
 map.dragging.disable();
 
-var osmGeocoder = new L.Control.OSMGeocoder(options);
-
-map.addControl(osmGeocoder);
-
 var residentCount = 0;
 
 var studentCount = 0;
@@ -154,9 +150,13 @@ info.update = function (e, usedLayer) {
     }
   }
 
-  this._div.innerHTML = '<h4>Ward Population</h4>' + "Est. Students: " +
-  studentCount + "<br>" + "Total Residents: <span style='color: " +
-  getTextColor(residentCount) + "'>" + residentCount;
+  this._div.innerHTML = '<h4>Ann Arbor Ward Mapper</h4>' + "<p>Use the navigation on the top left and click and drag on the map to highlight" +
+  " areas and include them in a student ward. <br><br>Population counts will update below, " +
+  "and turn red when above ward capacity.</p>" +
+  '<h4>Ward Population</h4>' + "Est. Students: " + studentCount + "<br>" +
+  "Total Residents: <span style='color: " + getTextColor(residentCount) + "'>" +
+  residentCount;
+
 };
 
 info.addTo(map);
