@@ -141,12 +141,12 @@ info.update = function (e, usedLayer) {
       studentCount = 0;
     }
     else if(!e.layer.options['selected']) {
-      residentCount += usedLayer.feature.properties['nhgis00153'];
-      studentCount += usedLayer.feature.properties['Count_'];
+      residentCount += usedLayer.feature.properties['WARD_POP'];
+      studentCount += usedLayer.feature.properties['STU_POP'];
     }
     else {
-      residentCount -= usedLayer.feature.properties['nhgis00153'];
-      studentCount -= usedLayer.feature.properties['Count_'];
+      residentCount -= usedLayer.feature.properties['WARD_POP'];
+      studentCount -= usedLayer.feature.properties['STU_POP'];
     }
   }
 
